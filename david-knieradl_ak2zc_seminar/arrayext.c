@@ -3,6 +3,7 @@
 #include "arrayext.h"
 
 
+
 void reverse_array_in_place(int arr[], int n) {
 	if (arr == NULL) {
 		fprintf(stderr, "Error: Null pointer passed to reverse_array_in_place.\n");

@@ -1,6 +1,7 @@
 
-#include <stdlib.h>
 #include "io.h"
+#include <stdlib.h>
+
 
 
 IOResult io_readline(char* const buffer, size_t* size) {

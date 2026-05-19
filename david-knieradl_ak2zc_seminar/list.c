@@ -5,7 +5,6 @@
 
 
 
-
 bool _list_resize(List* const list, const size_t new_capacity, const size_t min_capacity) {
 	const size_t effective_capacity = max(new_capacity, min_capacity);
 	int* new_data = (int*)realloc(list->_data, sizeof(int) * effective_capacity);
