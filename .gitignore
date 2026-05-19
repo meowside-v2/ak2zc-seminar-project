@@ -1,2 +1,7 @@
+**/*/CMakeCache.txt
+**/*/cmake_install.cmake
+**/build
+**/.vscode
+**/CMakeFiles
 **/.vs
 **/out
