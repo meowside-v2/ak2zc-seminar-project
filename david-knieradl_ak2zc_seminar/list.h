@@ -5,8 +5,7 @@
 #include <stdbool.h>
 
 
-typedef struct List
-{
+typedef struct List {
 	int* _data;
 	size_t size;
 	size_t capacity;

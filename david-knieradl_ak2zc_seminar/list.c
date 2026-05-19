@@ -56,8 +56,7 @@ int get_at(const List* const list, int* const index) {
 }
 
 
-List make_list(const size_t capacity)
-{
+List make_list(const size_t capacity) {
 	// Assign default size for the list if the provided capacity is zero
 	const size_t effective_capacity = max(capacity, 16);
 
@@ -75,8 +74,7 @@ List make_list(const size_t capacity)
 	return list;
 }
 
-void destroy_list(List* const list)
-{
+void destroy_list(List* const list) {
 	// Do nothing if the list is already empty
 	if (list->_data == NULL) {
 		return;
