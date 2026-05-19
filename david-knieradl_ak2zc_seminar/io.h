@@ -14,10 +14,13 @@ typedef enum IOResult {
 } IOResult;
 
 
-IOResult io_readline(char* const buffer, size_t* size);
-IOResult io_freadline(char* const buffer, size_t* size, FILE* stream);
+IOResult io_readline(char* const buffer, size_t* const size);
+IOResult io_freadline(char* const buffer, size_t* const size, FILE* const stream);
+
+IOResult io_readchar(char* const value);
+IOResult io_freadchar(char* const value, FILE* const stream);
 
 IOResult io_readint(int* const value);
-IOResult io_freadint(int* const value, FILE* stream);
+IOResult io_freadint(int* const value, FILE* const stream);
 
 #endif // !__IO_H__

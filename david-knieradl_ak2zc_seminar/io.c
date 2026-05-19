@@ -4,11 +4,11 @@
 
 
 
-IOResult io_readline(char* const buffer, size_t* size) {
+IOResult io_readline(char* const buffer, size_t* const size) {
 	return io_freadline(buffer, size, stdin);
 }
 
-IOResult io_freadline(char* const buffer, size_t* size, FILE* stream) {
+IOResult io_freadline(char* const buffer, size_t* const size, FILE* const stream) {
 	if (buffer == NULL || stream == NULL || *size == 0) {
 		fprintf(stderr, "Error: Null pointer passed to io_freadline.\n");
 		return IO_ARGUMENT_ERROR;
@@ -28,7 +28,7 @@ IOResult io_readint(int* const value) {
 	return io_freadint(value, stdin);
 }
 
-IOResult io_freadint(int* const value, FILE* stream) {
+IOResult io_freadint(int* const value, FILE* const stream) {
 	if (value == NULL || stream == NULL) {
 		fprintf(stderr, "Error: Null pointer passed to io_freadint.\n");
 		return IO_ARGUMENT_ERROR;
@@ -37,7 +37,7 @@ IOResult io_freadint(int* const value, FILE* stream) {
 	char buffer[64];
 	size_t size = sizeof(buffer) / sizeof(char);
 
-	const IOResult readline_result = io_readline(buffer, &size);
+	const IOResult readline_result = io_readline(buffer, &size, stream);
 	if (readline_result != IO_SUCCESS) {
 		return readline_result;
 	}
@@ -53,5 +53,32 @@ IOResult io_freadint(int* const value, FILE* stream) {
 		return IO_INVALID_FORMAT_ERROR;
 	}
 
+	return IO_SUCCESS;
+}
+
+IOResult io_readchar(char* const value) {
+	return io_freadchar(value, stdin);
+}
+
+IOResult io_freadchar(char* const value, FILE* const stream) {
+	if (value == NULL || stream == NULL) {
+		fprintf(stderr, "Error: Null pointer passed to io_freadchar.\n");
+		return IO_ARGUMENT_ERROR;
+	}
+
+	char buffer[64];
+	size_t size = sizeof(buffer) / sizeof(char);
+
+	const IOResult readline_result = io_freadline(buffer, &size, stream);
+	if (readline_result != IO_SUCCESS) {
+		return readline_result;
+	}
+
+	if (size == 0) {
+		fprintf(stderr, "Error: No input read in io_freadchar.\n");
+		return IO_STREAM_ERROR;
+	}
+
+	*value = buffer[0];
 	return IO_SUCCESS;
 }
