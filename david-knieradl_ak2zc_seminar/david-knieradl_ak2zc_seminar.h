@@ -1,0 +1,5 @@
+﻿// david-knieradl_ak2zc_seminar.h : Include file for standard system include files,
+// or project specific include files.
+
+
+// TODO: Reference additional headers your program requires here.
