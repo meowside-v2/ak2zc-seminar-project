@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "david-knieradl_ak2zc_seminar.h"
+#include "arrayext.h"
 
 
 int main()
