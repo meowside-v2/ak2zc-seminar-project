@@ -12,7 +12,7 @@ endif()
 project ("david-knieradl_ak2zc_seminar")
 
 # Add source to this project's executable.
-add_executable (david-knieradl_ak2zc_seminar "david-knieradl_ak2zc_seminar.c" "david-knieradl_ak2zc_seminar.h" "arrayext.h" "arrayext.c" "io.c" "io.h" "list.h" "list.c")
+add_executable (david-knieradl_ak2zc_seminar "david-knieradl_ak2zc_seminar.c"  "arrayext.h" "arrayext.c" "io.c" "io.h" "list.h" "list.c")
 set_property(TARGET david-knieradl_ak2zc_seminar PROPERTY C_STANDARD 11)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
